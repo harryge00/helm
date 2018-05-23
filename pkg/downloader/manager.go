@@ -623,6 +623,7 @@ func tarFromLocalDir(chartpath string, name string, repo string, version string)
 		return "", err
 	}
 
+	fmt.Println(origPath, ch.Metadata)
 	constraint, err := semver.NewConstraint(version)
 	if err != nil {
 		return "", fmt.Errorf("dependency %s has an invalid version/constraint format: %s", name, err)
